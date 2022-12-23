@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Naming Files and Folders (Guidelines) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>Documentation</li>
+    <li><a href="naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/documentation/pages/naming_files_and_folders.guidelines.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Naming Files and Folders (Guidelines)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_general_guidelines">General Guidelines</a></li>
+<li><a href="#_separate_words_in_file_names_with_underscores">Separate words in file names with underscores</a></li>
+<li><a href="#_symbols_and_filenames">Symbols and filenames</a></li>
+<li><a href="#_use_a_flat_folder_structure">Use a flat folder structure</a>
+<ul class="sectlevel2">
+<li><a href="#_exceptions_for_consistency">Exceptions for consistency</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Naming conventions are hugely important to maintainability and readability. This guide recommends naming conventions for the file name and the symbol name.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_general_guidelines"><a class="anchor" href="#_general_guidelines"></a>General Guidelines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>✅ Do follow a pattern that describes the symbol&#8217;s feature then its type. The recommended pattern is feature.type.adoc
+✅ Do make file and directory names lowercase
+✅ Do name files and files to clearly convey their intent
+✅ Do use only standard ASCII alphanumeric characters in file and directory names.</p>
+</div>
+<div class="paragraph">
+<p>❌ Don&#8217;t use generic page names such as document1.html.</p>
+</div>
+<div class="paragraph">
+<p><strong>Why?</strong>
+Naming conventions help provide a consistent way to find content at a glance. Consistency within the project is vital. Consistency with a team is important. Consistency across a company provides tremendous efficiency.</p>
+</div>
+<div class="paragraph">
+<p><strong>Why?</strong>
+Nnaming conventions help find desired code faster and make it easier to understand.</p>
+</div>
+<div class="paragraph">
+<p><strong>Why?</strong>
+Names of folders and files should clearly convey their intent. For example, <code>templates/architecture_decision_record.template.adoc`</code> should contain a template for architecture decision records.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_separate_words_in_file_names_with_underscores"><a class="anchor" href="#_separate_words_in_file_names_with_underscores"></a>Separate words in file names with underscores</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>✅ Do use underscores, not dashes (hyphens) to separate words, for example, <code>design_guide.template.adoc</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Why?</strong>
+Grammatically, hyphens are for hyphenating words. using them for other things introduces potential ambiguity. Also, visually, underscores more closely represent the whitespace they&#8217;re replacing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_symbols_and_filenames"><a class="anchor" href="#_symbols_and_filenames"></a>Symbols and filenames</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>✅ Do use consistent names for all assets named after what they represent.
+✅ Do give the filename the conventional suffix representing it&#8217;s symbol (such as <code>.template.adoc</code>, <code>.adr.adoc</code>, <code>.guidelines.adoc</code>, <code>.standard.adoc</code>) for a file of that type.</p>
+</div>
+<div class="paragraph">
+<p><strong>Why?</strong>
+Consistent conventions make it easy to quickly identify and reference assets of different types.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_a_flat_folder_structure"><a class="anchor" href="#_use_a_flat_folder_structure"></a>Use a flat folder structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We have chosen to adopt as flat a folder structure as possible to make things easier to find.</p>
+</div>
+<div class="paragraph">
+<p>Make folder names lowercase. Use underscores, not hyphens, to separate words, for example, <code>health_check</code>. Use only standard ASCII alphanumeric characters in file and directory names.</p>
+</div>
+<div class="sect2">
+<h3 id="_exceptions_for_consistency"><a class="anchor" href="#_exceptions_for_consistency"></a>Exceptions for consistency</h3>
+<div class="paragraph">
+<p>If you&#8217;re adding to a directory where everything else already uses underscores, and it&#8217;s not feasible to change everything to underscores, it&#8217;s okay to use hyphens to stay consistent.</p>
+</div>
+<div class="paragraph">
+<p>For example, if the directory already has <code>lesson_1.jd</code>, <code>lesson_2.jd</code>, and <code>lesson_3.jd</code>, it&#8217;s okay to add your new file as <code>lesson_4.jd</code> instead of <code>lesson-4.jd</code>. However, in all other situations, use hyphens.</p>
+</div>
+<div class="paragraph">
+<p>✅ Recommended: avoiding_cliches.jd
+✅ Sometimes OK: avoiding-cliches.jd</p>
+</div>
+<div class="paragraph">
+<p>❌ Not recommended: avoidingcliches.jd
+❌ Not recommended: avoidingCliches.jd
+❌ Not recommended: avoiding_clichés.jd</p>
+</div>
+<div class="paragraph">
+<p>Other exceptions
+It&#8217;s okay to have some inconsistency in filenames if it can&#8217;t otherwise be avoided. For example, sometimes tools that generate reference documentation produce filenames based on different style requirements or based on the design and naming conventions of the product or API itself. In those cases, it&#8217;s okay to make exceptions for those files.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>

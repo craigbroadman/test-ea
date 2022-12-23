@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AWS CodePipeline (Guidelines) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>CICD</li>
+    <li><a href="aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/cicd/pages/aws_codepipeline.guidelines.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">AWS CodePipeline (Guidelines)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_ℹ_what_is_code_pipeline">ℹ What is Code Pipeline</a></li>
+<li><a href="#_key_contacts">📘 Key Contacts</a>
+<ul class="sectlevel2">
+<li><a href="#_enterprise_architects">Enterprise Architects</a></li>
+<li><a href="#_solution_architects">Solution Architects</a></li>
+<li><a href="#_rd">R&amp;D</a></li>
+<li><a href="#_it">IT</a></li>
+<li><a href="#_product_support">Product Support</a></li>
+</ul>
+</li>
+<li><a href="#_what_codepipeline_is_good_at">✅ What CodePipeline is good at</a></li>
+<li><a href="#_what_codepipeline_is_not_good_at">❌ What CodePipeline is not good at</a></li>
+<li><a href="#_trigger_options">Trigger Options</a>
+<ul class="sectlevel2">
+<li><a href="#_trigger_on_detection_of_changes_from_the_pipeline_source_default_behaviour">🔔 Trigger on detection of changes from the pipeline source (default behaviour)</a></li>
+<li><a href="#_trigger_manually">✋🏼 Trigger Manually</a></li>
+<li><a href="#_trigger_from_a_custom_github_action_experimental">🛠 Trigger from a custom GitHub Action (experimental)</a></li>
+<li><a href="#_trigger_using_a_hybrid_approach_change_detection_custom_github_action_experimental">🤝🏼 Trigger using a Hybrid approach - change detection + custom GitHub Action (experimental)</a></li>
+<li><a href="#_periodic_not_recommended">⏰ Periodic (not recommended)</a></li>
+<li><a href="#_using_a_custom_cloudwatch_event_not_via_github">🛠 Using a custom CloudWatch event (not via GitHub)</a></li>
+<li><a href="#_considerations_for_databases_and_code_pipeline">Considerations for Databases and Code Pipeline</a></li>
+</ul>
+</li>
+<li><a href="#_ipipeline_use_cases">iPipeline Use Cases</a></li>
+<li><a href="#_additional_info">Additional info</a>
+<ul class="sectlevel2">
+<li><a href="#_igo_ngsd">iGO - NGSD</a></li>
+<li><a href="#_igo_image_pipelines">iGO - Image Pipeline(s)</a></li>
+<li><a href="#_igo_infrastructure_for_patching_pipeline">iGO - Infrastructure for Patching Pipeline</a></li>
+<li><a href="#_consumer_gateway">Consumer Gateway</a></li>
+<li><a href="#_ifs_nomad_apis">IFS - Nomad APIs</a></li>
+<li><a href="#_uk_portal_solutionbuilder">UK Portal - SolutionBuilder</a></li>
+</ul>
+</li>
+<li><a href="#_future_ideas">Future ideas</a></li>
+<li><a href="#_useful_resources">Useful resources</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_ℹ_what_is_code_pipeline"><a class="anchor" href="#_ℹ_what_is_code_pipeline"></a>ℹ What is Code Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AWS CodePipeline is a <strong>fully managed continuous delivery service</strong> that helps you automate your release pipelines for fast and reliable application and infrastructure updates.</p>
+</div>
+<div class="paragraph">
+<p>CodePipeline <strong>automates the build, test, and deploy phases</strong> of your release process every time there is a <strong>code change</strong>, based on the release model you define. This enables you to rapidly and reliably deliver features and updates.</p>
+</div>
+<div class="paragraph">
+<p>You can easily <strong>integrate AWS CodePipeline with third-party services such as GitHub</strong> or with your own custom plugin. With AWS CodePipeline, <strong>you only pay for what you use</strong>. There are <strong>no upfront fees</strong> or long-term commitments.</p>
+</div>
+<div class="paragraph">
+<p>🔗 <a href="https://aws.amazon.com/codepipeline/">AWS CodePipeline</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_contacts"><a class="anchor" href="#_key_contacts"></a>📘 Key Contacts</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_enterprise_architects"><a class="anchor" href="#_enterprise_architects"></a>Enterprise Architects</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Craig Broadman</p>
+</li>
+<li>
+<p>Michael Kocher</p>
+</li>
+<li>
+<p>Wayne Ennis</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solution_architects"><a class="anchor" href="#_solution_architects"></a>Solution Architects</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Jonathan Yan</p>
+</li>
+<li>
+<p>Tri Le</p>
+</li>
+<li>
+<p>Chris Blackwell</p>
+</li>
+<li>
+<p>Emeric Quervet</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rd"><a class="anchor" href="#_rd"></a>R&amp;D</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Luke Steele</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_it"><a class="anchor" href="#_it"></a>IT</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ryan Lenahan</p>
+</li>
+<li>
+<p>Jason Brown</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_product_support"><a class="anchor" href="#_product_support"></a>Product Support</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>TBC</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_codepipeline_is_good_at"><a class="anchor" href="#_what_codepipeline_is_good_at"></a>✅ What CodePipeline is good at</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Continuous Integration / Continuous Deployment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>via web hooks that detect code changes in source control branches (typically master / main)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Gated approvals for promotion to sensitive / higher environments (e.g. uat / prod) to ensure only approved changes are promoted</p>
+</li>
+<li>
+<p>Linear environment deployments, for example e.g. dev ➡ qa ➡ uat ➡ prod</p>
+</li>
+<li>
+<p>Parallel builds</p>
+</li>
+<li>
+<p>Roll forward deployments rather than rollback</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_codepipeline_is_not_good_at"><a class="anchor" href="#_what_codepipeline_is_not_good_at"></a>❌ What CodePipeline is not good at</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Visual representation of what deployment version is in each environment (Jenkins and Octopus are much better at this)</p>
+</li>
+<li>
+<p>Non-linear environment deployments</p>
+</li>
+<li>
+<p>It&#8217;s not possible to choose a version other than the latest changed version to promote</p>
+</li>
+<li>
+<p>Database Deployments (Dirk to elaborate)</p>
+</li>
+<li>
+<p>Rollbacks</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_trigger_options"><a class="anchor" href="#_trigger_options"></a>Trigger Options</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_trigger_on_detection_of_changes_from_the_pipeline_source_default_behaviour"><a class="anchor" href="#_trigger_on_detection_of_changes_from_the_pipeline_source_default_behaviour"></a>🔔 Trigger on detection of changes from the pipeline source (default behaviour)</h3>
+<div class="paragraph">
+<p>This is the default option and is recommended by AWS. A pipeline is kicked-off whenever a change in the configured pipeline source branch is detected.</p>
+</div>
+<div class="paragraph">
+<p>This is the perfect choice when fully implementing Continuous Integration / Continuous Deployment.</p>
+</div>
+<div class="paragraph">
+<p>At time of writing, CodePipeline supports sourcing from AWS CodeCommit, <strong>GitHub (mandated by iPipeline)</strong>, Amazon ECR, and Amazon S3.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>ℹ When using <strong>GitHub</strong> as the source for a pipeline, CodePipeline uses a <strong>webhook</strong> to detect changes in a remote branch and kicks off the pipeline.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>ℹ When using <strong>CodeCommit, Amazon ECR, or Amazon S3</strong> as the source for a pipeline, CodePipeline uses an Amazon <strong>CloudWatch Event</strong> to detect changes in the source and immediately kick off a pipeline</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>This option does not work well for gated approvals if you want to choose to promote anything other than the latest set of changes to higher environments.</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Why?</strong> CodePipeline is designed for Continuous Integration / Continuous Deployment through linear environments.</p>
+</div>
+<div class="paragraph">
+<p>Therefore if you merge frequently but don&#8217;t complete the whole CodePipeline through to every environment each time (e.g. you use gated approvals), it&#8217;ll create several instances of the pipeline execution (although this seems to be limited to two) each of which need to be approved.</p>
+</div>
+<div class="paragraph">
+<p>You then lose the ability to choose which one to promote to the next environment, it will just run the pipeline twice. At the time of writing we&#8217;re not sure if this is latest -1 followed by latest or first followed by latest but either way it causes complications.</p>
+</div>
+<div class="paragraph">
+<p>To illustrate the problem, imagine the following scenario:
+* CodePipeline is setup to automatically deploy to qa on a merge to master
+* Gated approvals are enabled for uat and prod
+* Change 1 is merged to master, it&#8217;s automatically deployed to qa, tested and signed off
+* Change 2 is merged to master, it&#8217;s automatically deployed to qa, tested and signed off
+* Change 3 is merged to master, it&#8217;s automatically deployed to qa, tested and signed off
+* Change 4 is merged to master, it&#8217;s automatically deployed to qa but is not yet tested/signed off</p>
+</div>
+<div class="paragraph">
+<p>If you now navigate to the CodePipeline in the AWS console, you don&#8217;t see 4 instances (one for each change) you see just one (the latest).</p>
+</div>
+<div class="paragraph">
+<p>Therefore if you now wish to promote to uat, you must take Change 4 (the latest). However for some reason you actually need to approve it twice??</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trigger_manually"><a class="anchor" href="#_trigger_manually"></a>✋🏼 Trigger Manually</h3>
+<div class="paragraph">
+<p><strong>Why use this option?</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rerelease current source artifacts/repositories</p>
+</li>
+<li>
+<p>Multiple source artifacts/repositories where the following conditions are true</p>
+<div class="ulist">
+<ul>
+<li>
+<p>It is not ideal to trigger a release on each individual source&#8217;s change</p>
+</li>
+<li>
+<p>No single source artifact/repository change is ideal to trigger the pipeline</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>How to with CodeStarSourceConnection GitHub actions</strong> - Set the configuration parameter 'DetectChanges' to 'false' as noted in the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/action-reference-CodestarConnectionSource.html#action-reference-CodestarConnectionSource-config" class="external" target="_blank" rel="noopener">AWS CodePipeline User Guide</a></p>
+</div>
+<div class="paragraph">
+<p>This is located in the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html" class="external" target="_blank" rel="noopener">CodePipeline JSON document structure</a>, at the following JPath location <code>.pipeline.stages[].actions[].configuration.DetectChanges</code></p>
+</div>
+<div class="paragraph">
+<p><strong>How to use with Amazon S3 source actions</strong> - Set the configuration parameter 'PollForSourceChanges' to 'false' as noted in the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/action-reference-S3.html#action-reference-S3-config" class="external" target="_blank" rel="noopener">AWS CodePipeline User Guide</a></p>
+</div>
+<div class="paragraph">
+<p>This is located in the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html" class="external" target="_blank" rel="noopener">CodePipeline JSON document structure</a>, at the following JPath location <code>.pipeline.stages[].actions[].configuration.PollForSourceChanges</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>🚫 Both actions types above must explicitly set to 'false' in order to prevent automated release triggering.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trigger_from_a_custom_github_action_experimental"><a class="anchor" href="#_trigger_from_a_custom_github_action_experimental"></a>🛠 Trigger from a custom GitHub Action (experimental)</h3>
+<div class="paragraph">
+<p><strong>Why use this option?</strong>
+* There are hundreds of <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">events that can trigger a GitHub Action Workflow</a>
+** For example you could invoke a GitHub Action upon the <a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository">creation of a release in GitHub</a>
+* You therefore have a huge degree of flexibility of when/how to invoke CodePipeline</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>🚫 Do not use this option to deploy code changes to higher environments without going through dev/qa first!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>How?</strong>
+* Obtain an AWS role with the correct permissions (TBD) to execute CodePipeline.
+* Get the access-key / secret key and add them to GitHub secrets
+* Create a GitHub action, based on your trigger point(s) and hook it up to call JavaScript code to start the CodePipeline execution (as per the below):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JavaScript hljs" data-lang="JavaScript">var AWS = require("aws-sdk");
+var core = require("@actions/core");
+
+try {
+  var awsRegion = core.getInput("aws-region");
+  var awsAccessKey = core.getInput("aws-access-key");
+  var awssecretKey = core.getInput("aws-secret-key");
+  var pipelineName = core.getInput("pipeline-name");
+
+  AWS.config = new AWS.Config();
+  AWS.config.region = awsRegion;
+  AWS.config.accessKeyId = awsAccessKey;
+  AWS.config.secretAccessKey = awssecretKey;
+
+  var codepipeline = new AWS.CodePipeline();
+  var pipeline = {
+    name: pipelineName,
+  };
+
+  codepipeline.startPipelineExecution(pipeline, function (err, okData) {
+    if (err) {
+      console.log(err, err.stack);
+    } else {
+      console.log(okData);
+    }
+  });
+} catch (error) {
+  core.setFailed(error.message);
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The code above was taken from this <a href="https://github.com/marketplace/actions/aws-codepipeline-trigger">third party AWS CodePipeline GitHub Action</a> - Feel free to use this as a reference point but DO NOT USE THIS ACTION DIRECTLY.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A proof of concept to test/demonstrate this functionality has not yet been written</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trigger_using_a_hybrid_approach_change_detection_custom_github_action_experimental"><a class="anchor" href="#_trigger_using_a_hybrid_approach_change_detection_custom_github_action_experimental"></a>🤝🏼 Trigger using a Hybrid approach - change detection + custom GitHub Action (experimental)</h3>
+<div class="paragraph">
+<p><strong>Why use this option?</strong>
+* You could use change detection to trigger deployments to your dev / qa environments
+* And then use a GitHub Action to invoke deployments to sensitive / higher environments (such as uat / prod)</p>
+</div>
+<div class="paragraph">
+<p><strong>We suggest using this approach when you want all changes to the master / main branch to be automatically deployed / tested in your development/QA environments but want control of when to promote to more sensitive environments.</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>How?</strong>
+* Create two pipelines:
+<strong> One for dev / QA, triggered on change detection on the master / main branch
+</strong> One for promotion to sensitive environments, triggered by a GitHub Action</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_periodic_not_recommended"><a class="anchor" href="#_periodic_not_recommended"></a>⏰ Periodic (not recommended)</h3>
+<div class="paragraph">
+<p>You can configure CodePipeline to be kicked off on a scheduled basis (e.g. daily, weekly, monthly etc)</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>⚠ Although CodePipeline supports beginning pipeline executions based on periodic checks, this is a pattern not recommended by AWS.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_a_custom_cloudwatch_event_not_via_github"><a class="anchor" href="#_using_a_custom_cloudwatch_event_not_via_github"></a>🛠 Using a custom CloudWatch event (not via GitHub)</h3>
+<div class="paragraph">
+<p>CodePipeline supports custom actions and manual approvals by introducing a custom CloudWatch event that can call a Lambda function to determine which CodePipeline(s) to trigger; this has the following benefits:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Avoid reacting to unimportant files:</strong> Avoid triggering a pipeline when changing files that do not affect the application functionality (e.g. documentation files, readme files, and .gitignore files).</p>
+</li>
+<li>
+<p><strong>Conditionally kickoff pipelines based on environmental conditions:</strong> Use custom code to evaluate whether a pipeline should be triggered. This allows for further customization beyond polling a source repository or relying on a push event. For example, you could create custom logic to automatically reschedule deployments on holidays to the next available workday.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🔗 See <a href="https://aws.amazon.com/blogs/devops/adding-custom-logic-to-aws-codepipeline-with-aws-lambda-and-amazon-cloudwatch-events">Code Pipeline Custom Logic</a> for more info</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_considerations_for_databases_and_code_pipeline"><a class="anchor" href="#_considerations_for_databases_and_code_pipeline"></a>Considerations for Databases and Code Pipeline</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Database servers are generally one-time creations</p>
+</li>
+<li>
+<p>Database servers minor updates are automatically applied</p>
+</li>
+<li>
+<p>AWS can force upgrades when your version is no longer supported</p>
+</li>
+<li>
+<p>Code Pipeline is not aware of any of the above making it difficult to safely deploy</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If terraform detects a change that forces a destroy and rebuild and Code Pipeline commits the change the environment will be lost which will result in a blank database unless it was previously built from a snapshot</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When using Code Pipeline have separate pipelines for database deployments</p>
+</li>
+<li>
+<p>If a separate pipeline is not an option use terraform to logically separate files and use a yaml file to control Code Pipeline</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ipipeline_use_cases"><a class="anchor" href="#_ipipeline_use_cases"></a>iPipeline Use Cases</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Use Case Matrix</caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Product</th>
+<th class="tableblock halign-left valign-top">Use Case(s)</th>
+<th class="tableblock halign-left valign-top">IAC Tech</th>
+<th class="tableblock halign-left valign-top">Key Tech</th>
+<th class="tableblock halign-left valign-top">Trigger Option</th>
+<th class="tableblock halign-left valign-top">Linear Environments</th>
+<th class="tableblock halign-left valign-top">Gated Approvals?</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Infrastructure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sprint 0 for new AWS Accounts when there are deploy accounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terraform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VPC, NLB, ALB, Security Groups etc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge to master branch of git repo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dev ➡ qa ➡ uat ➡ prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - qa, uat and prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iGo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NGSD/FCC APIs
+PDF_Preprocessor
+PDF_Mapper
+PDF_Info
+PDF_Filler
+PDF_SideBySidePreview</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terraform
+Terragrunt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ELB, EC2, ECS, Lambda, RDS, S3, WAF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual deployment from CodePipeline for all environments.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 separate CodePipelines 1 for sandbox, 1 for qa, 1 for uat ➡ prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - qa, uat and prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">We might add github trigger for lower environments in the future but not needed at this point. CodeBuild pulls source code from various GitHub repos</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iGo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NGSD
+Data Dictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terraform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lambda, RDS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual deployment from CodePipeline for all environments.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 separate CodePipelines 1 for sandbox, 1 for qa, 1 for uat 1 for prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - qa, uat and prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">We might add github trigger for lower environments in the future but not needed at this point.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iGo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image Pipeline(s)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terraform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Triggered on a schedule (Set it and forget it)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Building images, no deploy, uses parallel builds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iGo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Infrastructure for Patching Pipeline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terraform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Consumer Gateway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ECS Services, Tasks, ALB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terraform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - for all sensitive environments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application and IaC deployed together</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nomad APIs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terraform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Three APIs + one API Gateway + supporting infrastructure +  ECS/ECR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">On detection of changes from the pipeline source (master)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dev ➡ qa ➡ uat ➡ prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - for qa, uat and prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application and IaC deployed together</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UK Portal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serverless components of SolutionBuilder:
+Event Notifications
+Underwriting API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS CDK v1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API Gateway, Lambda, S3, State Machines, Step Functions, DynamoDB, SES, SNS, AppConfig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">On detection of changes from the pipeline source (main)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sandbox ➡ qa ➡ uat ➡ prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - uat and prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application and IaC deployed together, config can be deployed in isolation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UK Portal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lobcms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS CDK v2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Angular, S3, Cloudfront, API Gateway, Lambda, DynamoDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">On detection of changes from the pipeline source (main)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sandbox ➡ qa ➡ uat ➡ prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes - uat and prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application and IaC deployed together, config can be deployed in isolation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_info"><a class="anchor" href="#_additional_info"></a>Additional info</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_igo_ngsd"><a class="anchor" href="#_igo_ngsd"></a>iGO - NGSD</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Builds and delivers all the <strong>APIs</strong> used by NGSD/FCC products</p>
+</li>
+<li>
+<p>NGSD/FCC are using a different deployment process (Jenkins/Octopus)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_igo_image_pipelines"><a class="anchor" href="#_igo_image_pipelines"></a>iGO - Image Pipeline(s)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Overlays initial configuration on top of the CCOE image</p>
+</li>
+<li>
+<p>Resulting image consumed by downstream pipeline for application builds</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/igo_middle_tier_image_pipeline.png" alt="Static" width="650">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_igo_infrastructure_for_patching_pipeline"><a class="anchor" href="#_igo_infrastructure_for_patching_pipeline"></a>iGO - Infrastructure for Patching Pipeline</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploys the IaC that supports the patching process.</p>
+</li>
+<li>
+<p>Quick way to move IaC deploy off a developers machine</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consumer_gateway"><a class="anchor" href="#_consumer_gateway"></a>Consumer Gateway</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Linear deployments through each environment</p>
+</li>
+<li>
+<p>Self-service</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ifs_nomad_apis"><a class="anchor" href="#_ifs_nomad_apis"></a>IFS - Nomad APIs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We run unit test during the build phase, and deployments can only proceed if the unit tests pass</p>
+</li>
+<li>
+<p>Nomad APIs are docker containers running on AWS Fargate</p>
+</li>
+<li>
+<p>They are dotnet core APIs running on AWS managed Linux images</p>
+</li>
+<li>
+<p>Since we are using managed images, AWS Fargate will automatically handle all OS patches and updates</p>
+</li>
+<li>
+<p>Images are built and stored on AWS ECR in the Deploy Accounts</p>
+</li>
+<li>
+<p>All environments (dev, qa, uat, prod) pull a specific version from the ECR to deploy into its own environment</p>
+</li>
+<li>
+<p>We can roll back to previous builds, by referencing older image versions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_uk_portal_solutionbuilder"><a class="anchor" href="#_uk_portal_solutionbuilder"></a>UK Portal - SolutionBuilder</h3>
+<div class="paragraph">
+<p>🔗 <a href="https://github.com/ipipeline/solutionbuilder-monorepo">SolutionBuilder Monorepo</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We have created a monorepo using the <a href="https://nx.dev">Nx build system</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This allows us to detect what has changed and therefore only deploy what is necessary</p>
+</li>
+<li>
+<p>This monorepo will eventually contain everything to do with the SolutionBuilder application, including many API&#8217;s and frontend applications that can all be managed independently</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>We use a Trunk Based Development branching model with LaunchDarkly feature flags for all changes</p>
+</li>
+<li>
+<p>CodeBuild is kicked off when pull requests are created/updated</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This will spin up a temporary stack in our <code>sandbox</code> environment</p>
+</li>
+<li>
+<p>Automated tests are executed against the running application</p>
+</li>
+<li>
+<p>The PR can only be completed if the CodeBuild succeeds</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Used for all AWS Serverless applications</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pull request process</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/solutionbuilder_monorepo_pr_process_high_level.png" alt="PR Process" width="650">
+</div>
+</div>
+<div class="paragraph">
+<p>Deployment Process</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/solutionbuilder_monorepo_deployment_process.png" alt="Deployment Process" width="650">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_future_ideas"><a class="anchor" href="#_future_ideas"></a>Future ideas</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Blue/green canary deployments</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_useful_resources"><a class="anchor" href="#_useful_resources"></a>Useful resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>🔗 <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/getting-started-codepipeline.html">Getting started with CodePipeline</a></p>
+</div>
+<div class="paragraph">
+<p>🔗 <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">GitHub Action Triggers</a></p>
+</div>
+<div class="paragraph">
+<p>🔗 <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-buildspec-artifact-naming.html">Use semantic versioning to name build artifacts sample</a></p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>

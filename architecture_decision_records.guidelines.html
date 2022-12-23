@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Architecture decision Records (Guidelines) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation/architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation/asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation/asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation/date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation/date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation/file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation/naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation/naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Enterprise Architecture Wiki</a></li>
+    <li>Overview</li>
+    <li><a href="architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/ROOT/pages/architecture_decision_records.guidelines.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Architecture decision Records (Guidelines)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_what_is_an_architecture_decision_record">What is an architecture decision record?</a></li>
+<li><a href="#_how_to_start_using_adrs">How to start using ADRs</a></li>
+<li><a href="#_how_to_start_using_adrs_with_tools">How to start using ADRs with tools</a></li>
+<li><a href="#_adr_file_name_conventions">ADR file name conventions</a></li>
+<li><a href="#_suggestions_for_writing_good_adrs">Suggestions for writing good ADRs</a></li>
+<li><a href="#_teamwork_advice">Teamwork advice</a></li>
+<li><a href="#_useful_resources">Useful resources</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Doc Writer &lt;<a href="mailto:cbroadman@ipipeline.com">cbroadman@ipipeline.com</a>&gt;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_an_architecture_decision_record"><a class="anchor" href="#_what_is_an_architecture_decision_record"></a>What is an architecture decision record?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An architecture decision record (ADR) is a document that captures an important architecture decision made along with its context and consequences.</p>
+</div>
+<div class="paragraph">
+<p>An <strong>architecture decision</strong> (AD) is a software design choice that addresses a significant requirement.</p>
+</div>
+<div class="paragraph">
+<p>An <strong>architecture decision log</strong> (ADL) is the collection of all ADRs created and maintained for a particular project (or organization).</p>
+</div>
+<div class="paragraph">
+<p>An <strong>architecturally-significant requirement</strong> (ASR) is a requirement that has a measurable effect on a software system’s architecture.</p>
+</div>
+<div class="paragraph">
+<p>All these are within the topic of <strong>architecture knowledge management</strong> (AKM).</p>
+</div>
+<div class="paragraph">
+<p>The goal of this document is to provide a fast overview of ADRs, how to create them, and where to look for more information.</p>
+</div>
+<div class="paragraph">
+<p>Abbreviations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>AD</strong>: architecture decision</p>
+</li>
+<li>
+<p><strong>ADL</strong>: architecture decision log</p>
+</li>
+<li>
+<p><strong>ADR</strong>: architecture decision record</p>
+</li>
+<li>
+<p><strong>AKM</strong>: architecture knowledge management</p>
+</li>
+<li>
+<p><strong>ASR</strong>: architecturally-significant requirement</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_start_using_adrs"><a class="anchor" href="#_how_to_start_using_adrs"></a>How to start using ADRs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To start using ADRs, talk with your teammates about these areas.</p>
+</div>
+<div class="paragraph">
+<p>Decision identification:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How urgent and how important is the AD?</p>
+</li>
+<li>
+<p>Does it have to be made now, or can it wait until more is known?</p>
+</li>
+<li>
+<p>Both personal and collective experience, as well as recognized design methods and practices, can assist with decision identification.</p>
+</li>
+<li>
+<p>Ideally maintain a decision todo list that complements the product todo list.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Decision making:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A number of decision making techniques exists, both general ones and software architecture specific ones, for instance, dialogue mapping.</p>
+</li>
+<li>
+<p>Group decision making is an active research topic.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Decision enactment and enforcement:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ADs are used in software design; hence they have to be communicated to, and accepted by, the stakeholders of the system that fund, develop, and operate it.</p>
+</li>
+<li>
+<p>Architecturally evident coding styles and code reviews that focus on architectural concerns and decisions are two related practices.</p>
+</li>
+<li>
+<p>ADs also have to be (re-)considered when modernizing a software system in software evolution.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Decision sharing (optional):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Many ADs recur across projects.</p>
+</li>
+<li>
+<p>Hence, experiences with past decisions, both good and bad, can be valuable reusable assets when employing an explicit knowledge management strategy.</p>
+</li>
+<li>
+<p>Group decision making is an active research topic.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Decision documentation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Many templates and tools for decision capturing exist.</p>
+</li>
+<li>
+<p>See agile communities, e.g. M. Nygard&#8217;s ADRs.</p>
+</li>
+<li>
+<p>See traditional software engineering and architecture design processes, e.g. table layouts suggested by IBM UMF and by Tyree and Akerman from CapitalOne.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Decision guidance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The steps above are adopted from the Wikipedia entry on [Architectural Decision](<a href="https://en.wikipedia.org/wiki/Architectural_decision" class="bare">https://en.wikipedia.org/wiki/Architectural_decision</a>)</p>
+</li>
+<li>
+<p>A number of decision making techniques exists, both general ones and software architecture specific ones, for instance, dialogue mapping.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_start_using_adrs_with_tools"><a class="anchor" href="#_how_to_start_using_adrs_with_tools"></a>How to start using ADRs with tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can start using ADRs with tools any way you want.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you like using Google Drive and online editing, then you can create a Google Doc, or Google Sheet.</p>
+</li>
+<li>
+<p>If you like use source code version control, such as git, then you can create a file for each ADR.</p>
+</li>
+<li>
+<p>If you like using project planning tools, such as Atlassian Jira, then you can use the tool&#8217;s planning tracker.</p>
+</li>
+<li>
+<p>If you like using wikis, such as MediaWiki, then you can create an ADR wiki.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adr_file_name_conventions"><a class="anchor" href="#_adr_file_name_conventions"></a>ADR file name conventions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Our file name convention:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The name has a present tense imperative verb phrase. This helps readability and matches our commit message format.</p>
+</li>
+<li>
+<p>The name uses lowercase and dashes (same as this repo). This is a balance of readability and system usability.</p>
+</li>
+<li>
+<p>The extension is adoc (same as this repo). This can be useful for easy formatting.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_suggestions_for_writing_good_adrs"><a class="anchor" href="#_suggestions_for_writing_good_adrs"></a>Suggestions for writing good ADRs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Characteristics of a good ADR:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rational: Explain the reasons for doing the particular AD. This can include the context (see below), pros and cons of various potential choices, feature comparions, cost/benefit discussions, and more.</p>
+</li>
+<li>
+<p>Specific: Each ADR should be about one AD, not multiple ADs.</p>
+</li>
+<li>
+<p>Timestamps: Identify when each item in the ADR is written. This is especially important for aspects that may change over time, such as costs, schedules, scaling, and the like.</p>
+</li>
+<li>
+<p>Immutable: Don&#8217;t alter existing information in an ADR. Instead, amend the ADR by adding new information.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Characteristics of a good "Context" section in an ADR:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Explain your organization&#8217;s situation and business priorities.</p>
+</li>
+<li>
+<p>Include rationale and considerations based on social and skills makeups of your teams.</p>
+</li>
+<li>
+<p>Include pros and cons that are relevant, and describe them in terms that align with your needs and goals.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Characteristics of good "Consequences" section in an ADR:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Explain what follows from making the decision. This can include the effects, outcomes, outputs, follow ups, and more.</p>
+</li>
+<li>
+<p>Include information about any subsequent ADRs. It&#8217;s relatively common for one ADR to trigger the need for more ADRs, such as when one ADR makes a big overarching choice, which in turn creates needs for more smaller decisions.</p>
+</li>
+<li>
+<p>Include any after-action review processes. It&#8217;s typical for teams to review each ADR one month later, to compare the ADR information with what&#8217;s happened in actual practice, in order to learn and grow.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A new ADR may take the place of a previous ADR:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When an AD is made that replaces or invalidates a previous ADR, then a new ADR should be created</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_teamwork_advice"><a class="anchor" href="#_teamwork_advice"></a>Teamwork advice</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An ADR is an opportunity to lead your teammates, by talking together about the "why", rather than mandating the "what". For example, decision records are a way for teams to think smarter and communicate better; decision records are not valuable if they&#8217;re just an after-the-fact forced paperwork requirement.</p>
+</div>
+<div class="paragraph">
+<p>Some teams much prefer the name "decisions" over the abbreviation "ADRs". When some teams use the directory name "decisions", then it&#8217;s as if a light bulb turns on, and the team starts putting more information into the directory, such as vendor decisions, planning decisions, scheduling decisions, etc. All of these kinds of information can use the same template. We hypothesize that people learn faster with words ("decisions") over abbreviations ("ADRs"), and people are more motivated to write work-in-progress docs when the word "record" is removed, and also some developers and some managers dislike the word "architecture".</p>
+</div>
+<div class="paragraph">
+<p>In theory, immutability is ideal. In practice, mutability has worked better for our teams. We insert the new info the existing ADR, with a date stamp, and a note that the info arrived after the decision. This kind of approach leads to a "living document" that we all can update. Typical updates are when we get information thanks to new teammates, or new offerings, or real-world results of our usages, or after-the-fact third-party changes such as vendor capabilties, pricing plans, license agreements, etc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_useful_resources"><a class="anchor" href="#_useful_resources"></a>Useful resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Introduction:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[Architectural decision (wikipedia.org)](<a href="https://wikipedia.org/wiki/Architectural_decision" class="bare">https://wikipedia.org/wiki/Architectural_decision</a>)</p>
+</li>
+<li>
+<p>[Architecturally significant requirements (wikipedia.org)](<a href="https://wikipedia.org/wiki/Architecturally_significant_requirements" class="bare">https://wikipedia.org/wiki/Architecturally_significant_requirements</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Templates:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[Documenting architecture decisions - Michael Nygard (thinkrelevance.com)](<a href="http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions" class="bare">http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions</a>)</p>
+</li>
+<li>
+<p>[Markdown Architectural Decision Records (adr.github.io)](<a href="https://adr.github.io/madr/" class="bare">https://adr.github.io/madr/</a>) - provided by the [adr GitHub organization](<a href="https://adr.github.io/" class="bare">https://adr.github.io/</a>)</p>
+</li>
+<li>
+<p>[Template for documenting architecture alternatives and decisions (stackoverflow.com)](<a href="http://stackoverflow.com/questions/7104735/template-for-documenting-architecture-alternatives-and-decisions" class="bare">http://stackoverflow.com/questions/7104735/template-for-documenting-architecture-alternatives-and-decisions</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In-depth:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[ADMentor XML project (github.com)](<a href="https://github.com/IFS-HSR/ADMentor" class="bare">https://github.com/IFS-HSR/ADMentor</a>)</p>
+</li>
+<li>
+<p>[Architectural Decision Guidance across Projects: Problem Space Modeling, Decision Backlog Management and Cloud Computing Knowledge (ifs.hsr.ch)](<a href="https://www.ifs.hsr.ch/fileadmin/user_upload/customers/ifs.hsr.ch/Home/projekte/ADMentor-WICSA2015ubmissionv11nc.pdf" class="bare">https://www.ifs.hsr.ch/fileadmin/user_upload/customers/ifs.hsr.ch/Home/projekte/ADMentor-WICSA2015ubmissionv11nc.pdf</a>)</p>
+</li>
+<li>
+<p>[The Decision View&#8217;s Role in Software Architecture Practice (computer.org)](<a href="https://www.computer.org/csdl/mags/so/2009/02/mso2009020036-abs.html" class="bare">https://www.computer.org/csdl/mags/so/2009/02/mso2009020036-abs.html</a>)</p>
+</li>
+<li>
+<p>[Documenting Software Architectures: Views and Beyond (resources.sei.cmu.edu)](<a href="http://resources.sei.cmu.edu/library/asset-view.cfm?assetID=30386" class="bare">http://resources.sei.cmu.edu/library/asset-view.cfm?assetID=30386</a>)</p>
+</li>
+<li>
+<p>[Architecture Decisions: Demystifying Architecture (utdallas.edu)](<a href="https://www.utdallas.edu/~chung/SA/zz-Impreso-architecture_decisions-tyree-05.pdf" class="bare">https://www.utdallas.edu/~chung/SA/zz-Impreso-architecture_decisions-tyree-05.pdf</a>)</p>
+</li>
+<li>
+<p>[ThoughtWorks Technology Radar: Lightweight Architecture Decision Records (thoughtworks.com)](<a href="https://www.thoughtworks.com/radar/techniques/lightweight-architecture-decision-records" class="bare">https://www.thoughtworks.com/radar/techniques/lightweight-architecture-decision-records</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tools:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[Command-line tools for working with Architecture Decision Records](<a href="https://github.com/npryce/adr-tools" class="bare">https://github.com/npryce/adr-tools</a>)</p>
+</li>
+<li>
+<p>[Command line tools with python by Victor Sluiter](<a href="https://bitbucket.org/tinkerer_/adr-tools-python/src/master/" class="bare">https://bitbucket.org/tinkerer_/adr-tools-python/src/master/</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[Repository of Architecture Decision Records made for the Arachne Framework](<a href="https://github.com/arachne-framework/architecture" class="bare">https://github.com/arachne-framework/architecture</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See also:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>REMAP (Representation and Maintenance of Process Knowledge)</p>
+</li>
+<li>
+<p>DRL (Decision Representation Language)</p>
+</li>
+<li>
+<p>IBIS (Issue-Based Information System)</p>
+</li>
+<li>
+<p>QOC (Questions, Options, and Criteria)</p>
+</li>
+<li>
+<p>IBM’s e-Business Reference Architecture Framework</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

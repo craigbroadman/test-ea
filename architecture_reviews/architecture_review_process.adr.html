@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Architecture Review Process (ADR) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>Architecture Reviews</li>
+    <li><a href="architecture_review_process.adr.html">Architecture Review Process (ADR)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/architecture_reviews/pages/architecture_review_process.adr.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Architecture Review Process (ADR)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_ℹ_solution_architects_should_be_conducting_and_recording_architecture_reviews">ℹ Solution Architects should be conducting and recording architecture reviews</a></li>
+<li><a href="#_context_and_problem_statement">Context and Problem Statement</a></li>
+<li><a href="#_decision_drivers">Decision Drivers</a></li>
+<li><a href="#_considered_options">Considered Options</a></li>
+<li><a href="#_decision_outcome">Decision Outcome</a>
+<ul class="sectlevel2">
+<li><a href="#_who_should_be_involved">Who should be involved?</a></li>
+<li><a href="#_approval_vs_assessment">Approval vs assessment</a></li>
+<li><a href="#_technology_choices">Technology choices</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_ℹ_solution_architects_should_be_conducting_and_recording_architecture_reviews"><a class="anchor" href="#_ℹ_solution_architects_should_be_conducting_and_recording_architecture_reviews"></a>ℹ Solution Architects should be conducting and recording architecture reviews</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Status: Accepted</p>
+</li>
+<li>
+<p>Deciders: Matthew Collyer, Craig Broadman, Mike Kocher, Wayne Ennis, Rob Wetzel, Ben Blewett, Dirk VanderBent</p>
+</li>
+<li>
+<p>Date: 2022-08-31</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_context_and_problem_statement"><a class="anchor" href="#_context_and_problem_statement"></a>Context and Problem Statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As an Enterprise Architecture function we should have visibility of architecture reviews taking place across product teams.</p>
+</div>
+<div class="paragraph">
+<p>An architecture review is looking at a proposed design to assess if it conforms with iPipeline patterns and whether there is already an existing solution that could be reused.</p>
+</div>
+<div class="paragraph">
+<p>We should make a record of them taking place and their findings.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_decision_drivers"><a class="anchor" href="#_decision_drivers"></a>Decision Drivers</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Quality through consistency</p>
+</li>
+<li>
+<p>Re-use by design</p>
+</li>
+<li>
+<p>Technical debt is understood</p>
+</li>
+<li>
+<p>Findings are visible to the Enterprise Architecture group</p>
+</li>
+<li>
+<p>The Enterprise Architecture group can offer assistance and step in if necessary</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_considered_options"><a class="anchor" href="#_considered_options"></a>Considered Options</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Who should be involved in the process?</p>
+</li>
+<li>
+<p>Approval vs assessment</p>
+</li>
+<li>
+<p>Technology choices</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_decision_outcome"><a class="anchor" href="#_decision_outcome"></a>Decision Outcome</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_who_should_be_involved"><a class="anchor" href="#_who_should_be_involved"></a>Who should be involved?</h3>
+<div class="paragraph">
+<p>Primarily Solution Architectures who are subject matter experts for their products. However, the ability to escalate a review to Enterprise Architects will be made available</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_approval_vs_assessment"><a class="anchor" href="#_approval_vs_assessment"></a>Approval vs assessment</h3>
+<div class="paragraph">
+<p>We do not want architecture to become an ivory tower of "thou must do this" and "thou must do that", therefore all architecture reviews should be treated as asssessments with findings being recorded and categorised accordingly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_technology_choices"><a class="anchor" href="#_technology_choices"></a>Technology choices</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>*Microsoft Forms will be used to request a review to take place as this hooks into the Microsoft eco system and processes can be automated through the use of Microsoft Power Automate</p>
+</li>
+<li>
+<p>On submission of the form, the appropriate archtitects will be notified via Microsoft Teams with an adaptive card that must be completed to capture findings</p>
+</li>
+<li>
+<p>On submission the findings will be recorded in a Microsoft Teams list</p>
+</li>
+<li>
+<p>The findings must be documented in this repo</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>

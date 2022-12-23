@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AWS Account Nomenclature (Specification) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>Nomenclature</li>
+    <li><a href="aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/nomenclature/pages/aws_accounts.specification.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">AWS Account Nomenclature (Specification)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_summary">summary</a></li>
+<li><a href="#_base_value">base value</a>
+<ul class="sectlevel2">
+<li><a href="#_user_accounts"><span class="black">user accounts</span></a></li>
+<li><a href="#_component_accounts"><span class="black">component accounts</span></a></li>
+</ul>
+</li>
+<li><a href="#_email_addresses">email addresses</a>
+<ul class="sectlevel2">
+<li><a href="#_user_accounts_2"><span class="black">user accounts</span></a></li>
+<li><a href="#_component_accounts_2"><span class="black">component accounts</span></a></li>
+</ul>
+</li>
+<li><a href="#_examples_3">examples</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>this document describes the nomenclature pattern to be followed for the following aws account settings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>account name</p>
+</li>
+<li>
+<p>account alias</p>
+</li>
+<li>
+<p>account email address</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>the values used for each of the above settings is derived from a
+base value [<code><strong><span class="teal">${base_value}</span></strong></code>], as follows:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">setting</th>
+<th class="tableblock halign-left valign-top">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><span class="teal">${base_value}</span></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account alias</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><span class="teal">ipipeline-${base_value}</span></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account email address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><span class="teal">${base_value}@${email_domain}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_base_value"><a class="anchor" href="#_base_value"></a>base value</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>the base value format is dependent on the classification of the account.  accounts are classified as either <code><strong>user</strong></code> accounts, or <code><strong>component</strong></code> accounts, depending on their purpose:</p>
+</div>
+<div class="sect2">
+<h3 id="_user_accounts"><a class="anchor" href="#_user_accounts"></a><span class="black">user accounts</span></h3>
+<div class="paragraph">
+<p>user accounts are used for testing/experimentation/etc., are associated with a single individual [e.g. employee], and managed largely at their discretion, allowing for autonomous manipulation of account objects, services, etc., without the need to coordinate with product owners, teams, etc.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+these accounts reside in an independent, aws environment [e.g. payer/root account, control tower management infrastructure, organizations structure, etc.].
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_structure"><a class="anchor" href="#_structure"></a>structure</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">email domain: aws.users.iplsys.net
+base value format: ${username}-${index}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_elements"><a class="anchor" href="#_elements"></a>elements</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">username</dt>
+<dd>
+<p>the ipipeline user name of the individual associated with the account</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">index</dt>
+<dd>
+<p>an unsigned integer, starting with 1, incrementing as needed for multiple accounts</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_examples"><a class="anchor" href="#_examples"></a>examples</h4>
+<div class="exampleblock">
+<div class="content">
+jdoe-1<br>
+jdoe-2<br>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_accounts"><a class="anchor" href="#_component_accounts"></a><span class="black">component accounts</span></h3>
+<div class="paragraph">
+<p>component accounts are used for functional operational elements within the organization, and have an identified business owner [often referred to as the "product owner"], with changes or other activities managed by and coordinated with/approved by that owner.</p>
+</div>
+<div class="paragraph">
+<p>component accounts are further classified as either <code><strong>systems</strong></code> accounts, or <code><strong>services</strong></code> accounts, depending on their purpose:</p>
+</div>
+<div class="sect3">
+<h4 id="_structure_2"><a class="anchor" href="#_structure_2"></a>structure</h4>
+<div class="paragraph">
+<p><code><strong>systems accounts</code> [infrastructure systems, such as directory services, monitoring services, etc.]:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">email domain: aws.systems.iplsys.net
+base value format: ${component}-${country}-${environment}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code><strong>services accounts</code> [customer facing products/services, such as business applications]:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">email domain: aws.services.iplsys.net
+base value format: ${component}-${customer}-${country}-${environment}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_elements_2"><a class="anchor" href="#_elements_2"></a>elements</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">component name</dt>
+<dd>
+<p>the canonical name of the component</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">customer name</dt>
+<dd>
+<p>the customer identifier the account is for</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+accounts that provide services to multiple customers use the reserved <strong>shared</strong> keyword as the customer name
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">country</dt>
+<dd>
+<p>the iso 3166 country in which the audience/consumers of the account&#8217;s service[s] are predominately located</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+countries follow the iso 3166 alpha-3 standard [iso 3166-1] <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. countries</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">code</th>
+<th class="tableblock halign-left valign-top">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">global</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">an abstract value [not defined in iso 3166-1], used for components whose audience extends beyond a single country</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">usa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">united states of america</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gbr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">united kingdom of great britain and northern ireland</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">canada</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">environment</dt>
+<dd>
+<p>the component environment the account is for</p>
+</dd>
+</dl>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. environments</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">classification</th>
+<th class="tableblock halign-left valign-top">description</th>
+<th class="tableblock halign-left valign-top">notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">poc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">testing/experimentation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">may not necessarily be needed or present for all components</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dev</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">principle development</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">collaborative/cooperative component development</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">qa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">quality assurance testing</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user acceptance testing</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">production [active]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">active production environment</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">production [dr]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">disaster recovery production environment</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_examples_2"><a class="anchor" href="#_examples_2"></a>examples</h4>
+<div class="exampleblock">
+<div class="content">
+igo-shared-usa-prod<br>
+iam-global-prod
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_email_addresses"><a class="anchor" href="#_email_addresses"></a>email addresses</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_user_accounts_2"><a class="anchor" href="#_user_accounts_2"></a><span class="black">user accounts</span></h3>
+<div class="paragraph">
+<p>for each user, a canonical email address is created [in the form of a distribution list], excluding the index.  for each account owned by that user, an alias is created [pointing to the canonical email address] using the base name of each of the accounts.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_accounts_2"><a class="anchor" href="#_component_accounts_2"></a><span class="black">component accounts</span></h3>
+<div class="paragraph">
+<p>for each product/country [and customer in the case of services accounts], a canonical email address is created [in the form of a distribution list], excluding the environment.  for each account within that group, an alias is created [pointing to the canonical email address] using the base name of each of the accounts.</p>
+</div>
+<div class="paragraph">
+<p>distribution list membership is determined during the planning and design process for a given account deployment.</p>
+</div>
+<div class="sect3">
+<h4 id="_examples_user_accounts"><a class="anchor" href="#_examples_user_accounts"></a>examples [user accounts]</h4>
+<div class="exampleblock">
+<div class="content">
+canonical address : <a href="mailto:jdoe@aws.users.iplsys.net">jdoe@aws.users.iplsys.net</a><br>
+alias : <a href="mailto:jdoe-1@aws.users.iplsys.net">jdoe-1@aws.users.iplsys.net</a><br>
+alias : <a href="mailto:jdoe-2@aws.users.iplsys.net">jdoe-2@aws.users.iplsys.net</a>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_examples_component_accounts"><a class="anchor" href="#_examples_component_accounts"></a>examples [component accounts]</h4>
+<div class="exampleblock">
+<div class="content">
+canonical address : <a href="mailto:igo-nyl-usa@aws.services.iplsys.net">igo-nyl-usa@aws.services.iplsys.net</a><br>
+alias : <a href="mailto:igo-nyl-usa-dev@aws.services.iplsys.net">igo-nyl-usa-dev@aws.services.iplsys.net</a><br>
+alias : <a href="mailto:igo-nyl-usa-qa@aws.services.iplsys.net">igo-nyl-usa-qa@aws.services.iplsys.net</a><br>
+alias : <a href="mailto:igo-nyl-usa-uat@aws.services.iplsys.net">igo-nyl-usa-uat@aws.services.iplsys.net</a><br>
+alias : <a href="mailto:igo-nyl-usa-prod@aws.services.iplsys.net">igo-nyl-usa-prod@aws.services.iplsys.net</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples_3"><a class="anchor" href="#_examples_3"></a>examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>user account:</strong></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>ipipeline username : jdoe
+index              : 1</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>base_value      : jdoe-1
+account name    : jdoe-1
+account alias   : ipipeline-jdoe-1
+email addresses : jdoe-1@aws.users.iplsys.net</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>services account [shared customer]:</strong></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>component name : integrations-underwriting
+customer name  : shared
+country        : gbr
+environment    : dev</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>base_value      : integrations-underwriting-shared-gbr-dev
+account name    : integrations-underwriting-shared-gbr-dev
+account alias   : ipipeline-integrations-underwriting-shared-gbr-dev
+email addresses : integrations-underwriting-shared-gbr-dev@aws.services.iplsys.net</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>services account [specific customer]:</strong></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>component name : igo
+customer name  : nyl
+country        : usa
+environment    : prod</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>base_value      : igo-nyl-usa-prod
+account name    : igo-nyl-usa-prod
+account alias   : ipipeline-igo-nyl-usa-prod
+email addresses : igo-nyl-usa-prod@aws.services.iplsys.net</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>systems account:</strong></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>component name : dns
+country        : usa
+environment    : prod</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>base_value      : dns-usa-prod
+account name    : dns-usa-prod
+account alias   : ipipeline-dns-usa-prod
+email addresses : dns-usa-prod@aws.systems.iplsys.net</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes" class="bare">https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3" class="bare">https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://www.iso.org/iso-3166-country-codes.html" class="bare">https://www.iso.org/iso-3166-country-codes.html</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>

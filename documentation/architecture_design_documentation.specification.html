@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Architecture Design Documentation (Specification) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>Documentation</li>
+    <li><a href="architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/documentation/pages/architecture_design_documentation.specification.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Architecture Design Documentation (Specification)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_style_guide">Style Guide</a>
+<ul class="sectlevel2">
+<li><a href="#_structureorganization">structure/organization</a></li>
+<li><a href="#_syntaxstyle">syntax/style</a></li>
+<li><a href="#_indentation">indentation</a></li>
+<li><a href="#_font">font</a></li>
+<li><a href="#_character_case">character case</a></li>
+<li><a href="#_labeling">labeling</a></li>
+<li><a href="#_lines">lines</a></li>
+<li><a href="#_shapes">shapes</a></li>
+<li><a href="#_legend">legend</a></li>
+<li><a href="#_terminology">terminology</a></li>
+<li><a href="#_acronyms">acronyms</a></li>
+<li><a href="#_abbreviations">abbreviations</a></li>
+<li><a href="#_shorthand">shorthand</a></li>
+</ul>
+</li>
+<li><a href="#_maintainance">Maintainance</a>
+<ul class="sectlevel2">
+<li><a href="#_summary">summary</a></li>
+<li><a href="#_maintenance_of_documents">maintenance of documents</a></li>
+<li><a href="#_design_update_request">design update request</a></li>
+<li><a href="#_notes">notes</a></li>
+</ul>
+</li>
+<li><a href="#_source_control_standards">Source Control standards</a>
+<ul class="sectlevel2">
+<li><a href="#_general">general</a></li>
+<li><a href="#_repository_structure">repository structure</a></li>
+<li><a href="#_notes_2">notes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document applies to architecture designs that are created using tools such as draw.io, lucidchart and visio.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_style_guide"><a class="anchor" href="#_style_guide"></a>Style Guide</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_structureorganization"><a class="anchor" href="#_structureorganization"></a>structure/organization</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>documentation is organized by component, not type.  e.g. all documentation for given component is stored together, regardless of if it is graphical [e.g. diagrams], textual [e.g. written specifications], etc.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntaxstyle"><a class="anchor" href="#_syntaxstyle"></a>syntax/style</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>alignment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>all content should be aligned</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_indentation"><a class="anchor" href="#_indentation"></a>indentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>indentation must be equal to 4 spaces, tabs or spaces are ok but must be consistent throughout the document/project</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_font"><a class="anchor" href="#_font"></a>font</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>size</p>
+<div class="ulist">
+<ul>
+<li>
+<p>font size must be consistent throughout a given document</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>family</p>
+<div class="ulist">
+<ul>
+<li>
+<p>font family must be consistent throughout a given document</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>color</p>
+<div class="ulist">
+<ul>
+<li>
+<p>freeform text must be black</p>
+</li>
+<li>
+<p>shape text may use its natural color</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_character_case"><a class="anchor" href="#_character_case"></a>character case</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>all text should be lower case</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_labeling"><a class="anchor" href="#_labeling"></a>labeling</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>all shapes must be labeled</p>
+</li>
+<li>
+<p>labels should avoid interferences with other shapes [including lines]</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lines"><a class="anchor" href="#_lines"></a>lines</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>width should be 1 pixel</p>
+</li>
+<li>
+<p>orthogonal lines should use rounded corners</p>
+</li>
+<li>
+<p>all lines in a document must use the same style</p>
+</li>
+<li>
+<p>lines should intersect other lines as little as possible</p>
+</li>
+<li>
+<p>lines should have the minimum number of turns neccesary</p>
+</li>
+<li>
+<p>line descriptions should express the application specific functional purpose [not layer 3 protocol/port]</p>
+</li>
+<li>
+<p>lines should include arrows which express direction of communication</p>
+</li>
+<li>
+<p>line colors should be documented in the legend, and include layer 3 protocol and port</p>
+</li>
+<li>
+<p>layer 3 protocol/port color coding should follow the template</p>
+</li>
+<li>
+<p>layer 3 protocols and ports that aren&#8217;t on the template should may use any color, but should avoid existing template colors where possible</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_shapes"><a class="anchor" href="#_shapes"></a>shapes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>dimensions</p>
+<div class="ulist">
+<ul>
+<li>
+<p>a shape has a dominant dimension, which is the smaller of its width or height</p>
+</li>
+<li>
+<p>a shape&#8217;s dominant dimension should be 30 pixels</p>
+</li>
+<li>
+<p>all shapes in a document should have the same dominant dimension</p>
+</li>
+<li>
+<p>all shapes should retain their porportions</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>all shapes should be placed on the appropriate layer [e.g. content, not background, etc.]</p>
+</li>
+<li>
+<p>a shape&#8217;s text should be positioned so it interferes with other diagram elements [e.g. lines, etc] as little as possible</p>
+</li>
+<li>
+<p>agnostic/generic shapes should be used where possible</p>
+</li>
+<li>
+<p>provider/services specific shapes may be used where appropriate or necessary</p>
+</li>
+<li>
+<p>alignment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>shapes should share alignment where possible</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_legend"><a class="anchor" href="#_legend"></a>legend</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_terminology"><a class="anchor" href="#_terminology"></a>terminology</h3>
+<div class="sect3">
+<h4 id="_jargon"><a class="anchor" href="#_jargon"></a>jargon</h4>
+<div class="paragraph">
+<p>don&#8217;t use nonsense words for objects, software, processes, etc.  if a word is just an obscure substitute for some other well known word that already existed, just use that word.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_acronyms"><a class="anchor" href="#_acronyms"></a>acronyms</h3>
+<div class="paragraph">
+<div class="title">example: to refer to a computer, rather than using terms like box, machine, etc., use the word computer</div>
+<p>manufactured acronyms should not be used.  constructing ad-hoc acronyms in place of existing text or natural language/speech should be avoided.  existing, well known, acronyms are acceptable.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_abbreviations"><a class="anchor" href="#_abbreviations"></a>abbreviations</h3>
+<div class="paragraph">
+<div class="title">example: tcp is a well known, long established acronym that is widely accepted to mean transport control protocol, and as such, as acceptable to use.  pov, used in place of point of view, is unnecessary to communicate effectively, and can require an explanation that inhibits communication.</div>
+<p>abbreviations should not be used.  using the shortened form of a word or phrase contributes to potential inconsistency and lack of clarity.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_shorthand"><a class="anchor" href="#_shorthand"></a>shorthand</h3>
+<div class="paragraph">
+<div class="title">example:  use "management", not mgmt or mgt.</div>
+<p>shorthand notation should not be used.  similar in nature to acronyms and abbreviations, use of symbols or other indirect references in place of common language or writing adds to the potential for confusion and does not promote clear, effective communication.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">example:</div>
+<div class="paragraph">
+<p>👀 Take a look in the link:templates folder[templates] for draw.io templates</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_maintainance"><a class="anchor" href="#_maintainance"></a>Maintainance</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_summary"><a class="anchor" href="#_summary"></a>summary</h3>
+<div class="paragraph">
+<p>this document describes the document maintenance standards defined for architecural design documents, etc.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_maintenance_of_documents"><a class="anchor" href="#_maintenance_of_documents"></a>maintenance of documents</h3>
+<div class="sect3">
+<h4 id="_current"><a class="anchor" href="#_current"></a>current</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>component documentation will include infrastructure profile data</p>
+</li>
+<li>
+<p>point-in-time infrastructure profile data will be compared to repository contents</p>
+</li>
+<li>
+<p>as design changes occur infrastructure profile data will be updated</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_futureproposed"><a class="anchor" href="#_futureproposed"></a>future/proposed</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>automation of current</p>
+</li>
+<li>
+<p>additional granularity where identified</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_design_update_request"><a class="anchor" href="#_design_update_request"></a>design update request</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>create design change request issue</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ipipeline/infrastructure-architecture/issues">https://github.com/ipipeline/infrastructure-architecture/issues</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notes"><a class="anchor" href="#_notes"></a>notes</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_source_control_standards"><a class="anchor" href="#_source_control_standards"></a>Source Control standards</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_general"><a class="anchor" href="#_general"></a>general</h3>
+<div class="paragraph">
+<p>all documentation must be in a format that is conducive to version control.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>design documentation must be in xml format, and must use the jgraph specification</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/jgraph" class="bare">https://github.com/jgraph</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>reference documentation must use the asciidoc format, and must use the .adoc filename suffix</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://asciidoc.org/" class="bare">https://asciidoc.org/</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_repository_structure"><a class="anchor" href="#_repository_structure"></a>repository structure</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>documentation should reside within the product&#8217;s repository, in a directory named "documentation"</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notes_2"><a class="anchor" href="#_notes_2"></a>notes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>structure</p>
+<div class="ulist">
+<ul>
+<li>
+<p>option 1 - create repos according to product [laserapp-documentation, laserapp-infrastructure, laserapp-application]</p>
+</li>
+<li>
+<p>option 2 - store in a <code>docs`</code> folder within the repo containing your code</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>branches</p>
+<div class="ulist">
+<ul>
+<li>
+<p>jira summary should match branch description</p>
+</li>
+<li>
+<p>merge commits should use jira summary as commit summary</p>
+</li>
+<li>
+<p>merge commits should use jira description as commit description</p>
+</li>
+<li>
+<p>naming convention</p>
+<div class="ulist">
+<ul>
+<li>
+<p>component[product, etc]/category/task</p>
+</li>
+<li>
+<p>categories</p>
+<div class="ulist">
+<ul>
+<li>
+<p>new</p>
+</li>
+<li>
+<p>feature</p>
+</li>
+<li>
+<p>bugfix</p>
+</li>
+<li>
+<p>junk</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>access</p>
+<div class="ulist">
+<ul>
+<li>
+<p>repository/document management access controls</p>
+<div class="ulist">
+<ul>
+<li>
+<p>read - everyone else, as needed</p>
+</li>
+<li>
+<p>write - minimal, limited to architects</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>

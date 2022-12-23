@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Network Device Configuration (Standards) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>Network</li>
+    <li><a href="network_device_configuration.html">Network Device Configuration (Standards)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/network/pages/network_device_configuration.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Network Device Configuration (Standards)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_firewalls_switches_load_balancers">Firewalls, Switches, Load Balancers</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_firewalls_switches_load_balancers"><a class="anchor" href="#_firewalls_switches_load_balancers"></a>Firewalls, Switches, Load Balancers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Created</strong>: 2020-11-24</p>
+</div>
+<div class="paragraph">
+<p><strong>Updated:</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Version:</strong> 1.0</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Administrative Access</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Interfaces</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Management access via external [internet facing] interfaces is disabled. device management is performed via dedicated management interfaces that have been specifically configured for management</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Management protocols</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Management access is restricted to secure protocols [https, ssh, snmpv3].</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cryptography</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Management interfaces are configured to limit available cryptographic primitives [algorithms, digest, ciphers, etc.] to only the strongest available on the devices. this generally means use of aes for encryption, sha-512 for hashing, tls 1.2, and the longest key lengths available.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Login Timeout</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The login timeout follows the global standard as defined in iPipeline’s IT Ops procedures and standards documentation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Authorized Users</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All management is performed only by those IT Operations personnel who have been granted a given administrative role authority by the organization to administer and manage these devices/systems.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Authentication, Authorization, Accounting</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Remote aaa is configured using the available protocols on the device [tacacs+, radius, ldap].</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Two-factor Authentication</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Administrative access is available only via a VPN connection, which requires two factor authentication.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Account Lockout Threshold and Duration</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The administrative account lockout follows the global standard as defined in iPipeline’s IT Ops procedures and standards documentation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Login Banners</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Login banners are configured on all devices.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>snmp</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Only the required traps are enabled. All other traps are disabled</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Hostname</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hostnames are configured following the global standards</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Firewalls: fw-(location)-(role)-(number)(letter)</p>
+</li>
+<li>
+<p>Switches: sw-(location)-(role)-(number)(letter)</p>
+</li>
+<li>
+<p>Load balancers: lb-(location)-(role)-(number)(letter)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>dns</p>
+<div class="ulist">
+<ul>
+<li>
+<p>dns client settings are configured to used the proper dns servers and search domains.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ntp</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ntp is configured to use the proper internal server[s]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Logging</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Logging is configured at severity level 6 (informational), and sent to the proper syslog server[s]. all console logging is disabled.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Traffic Monitoring</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Traffic monitoring is enabled using supported protocols [netflow, sflow, ect]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>System Monitoring and Notifications</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Resource utilization [cpu, memory, filesystem space, temperature, and energy] is monitored by the network monitoring system and notifications are sent when thresholds are exceeded or degraded conditions are detected.</p>
+</li>
+<li>
+<p>Relevant interfaces [connections to firewalls, switches, load balancers, etc.] are monitored, and notifications are sent with interface availability status changes.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Unnecessary Features, Interfaces, Protocols, etc</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All unused features, interfaces, and protocols are completely disabled, and if enabled, will be accompanied by documentation describing the business need that is being satisfied.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Interfaces</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Aggregation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All aggregate interface port numbers are configured with the lowest physical port number used</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Descriptions</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All critical interfaces are labeled [internet connections, firewall connections, etc.] using the standard convention [remote device hostname]_[remote port]</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Configuration Backups</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Configuration backups are configured through the network configuration management system, and daily summary notifications are sent via email.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Software Updates</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Software updates are applied yearly on a rotating schedule depending on device type and location. Off cycle updates are applied in special circumstances (incident resolution, vulnerabilities, ect)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>

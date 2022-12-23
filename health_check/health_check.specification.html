@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Health Check (Specification) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>Health Check</li>
+    <li><a href="health_check.specification.html">Health Check (Specification)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/health_check/pages/health_check.specification.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Health Check (Specification)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_application">Application</a></li>
+<li><a href="#_url">Url</a></li>
+<li><a href="#_examples">Examples</a>
+<ul class="sectlevel2">
+<li><a href="#_headers">Headers</a></li>
+<li><a href="#_json">Json</a></li>
+</ul>
+</li>
+<li><a href="#_http_messages">Http messages</a>
+<ul class="sectlevel2">
+<li><a href="#_status_codes_1"><span class="black">status codes</span> <sup class="footnote">[1]</sup></a></li>
+<li><a href="#_response_headers_2"><span class="black">response headers</span> <sup class="footnote">[2]</sup></a></li>
+</ul>
+</li>
+<li><a href="#_response_format">response format</a>
+<ul class="sectlevel2">
+<li><a href="#_monitor_object"><span class="black">monitor object</span></a></li>
+<li><a href="#_security"><span class="black">security</span></a></li>
+<li><a href="#_examples_2"><span class="black">examples</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes the health check specification that is to be implemented/provided by all ipipeline resources [e.g. products, components, endpoints, etc.]</p>
+</div>
+<div class="paragraph">
+<p>This specification follows the upstream specification described in the api-healthcheck internet draft work in progress
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>, and extends that specification.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_application"><a class="anchor" href="#_application"></a>Application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While the upstream specification is specific to apis, this specification is applicable to all http[s] services, not just apis</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_url"><a class="anchor" href="#_url"></a>Url</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The path <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> component of a health url must be the literal string "/health", and must be located at the base of the service/api url</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_headers"><a class="anchor" href="#_headers"></a>Headers</h3>
+<div class="paragraph">
+<p>GET /health HTTP/1.1
+ Host: component.iplsys.net
+ Accept: application/health+json</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 200 OK
+Content-Type: application/health+json
+Cache-Control: max-age=3600
+ipipeline-health-status: pass
+Connection: close</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_json"><a class="anchor" href="#_json"></a>Json</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+   "status":"pass",
+   "serviceId":"f03e522f-1f44-4062-9b55-9587f91c9c41",
+   "description":"health of component api",
+   "version":"1",
+   "releaseId":"1.2.2",
+   "checks":{
+      "database:responseTime":[
+         {
+            "componentId":"dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d2",
+            "componentType":"component",
+            "observedValue":250,
+            "observedUnit":"ms",
+            "status":"pass",
+            "affectedEndpoints":[
+               "/users/{userId}",
+               "/customers/{customerId}/status"
+            ],
+            "time":"2021-01-17T03:36:48Z",
+            "output":""
+         }
+      ],
+      "esb_whatever:responseTime":[
+         {
+            "componentId":"dfd6cf2b-1b6e-4412-a0b8-f6f7797a60d2",
+            "componentType":"datastore",
+            "observedValue":75,
+            "status":"warn",
+            "time":"2021-01-17T03:36:48Z",
+            "output":"",
+            "links":{
+               "self":"http://component.iplsys.net/dbnode/dfd6cf2b/health"
+            }
+         }
+      ],
+      "monitor":[
+         {
+            "interval":{
+               "normal":30,
+               "failure":15,
+               "recovery":30
+            },
+            "failuresbeforeaction":2,
+            "successesbeforeaction":11
+         }
+      ]
+   }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>base url: <a href="https://component.iplsys.net/service" class="bare">https://component.iplsys.net/service</a><br>
+health url: <a href="https://component.iplsys.net/service/health" class="bare">https://component.iplsys.net/service/health</a><br>
+<br>
+base url: <a href="https://component.iplsys.net/api" class="bare">https://component.iplsys.net/api</a><br>
+health url: <a href="https://component.iplsys.net/api/health" class="bare">https://component.iplsys.net/api/health</a><br></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_http_messages"><a class="anchor" href="#_http_messages"></a>Http messages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>since there may be clients unable to parse a json message, to provide for better interoperability, the http message for a health check must include the following:</p>
+</div>
+<div class="sect2">
+<h3 id="_status_codes_1"><a class="anchor" href="#_status_codes_1"></a><span class="black">status codes</span> <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>for a status field value of either "pass" or "warn", the https status code should be 200 [ok]</p>
+</li>
+<li>
+<p>for a status field value of "fail", the http status code should be 503 [service unavailable]</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+deviation from this is allowable, but discouraged, and must not deviate from the upstream specification.  any deviation must be accompanied by supporting documentation
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+use of the 5xx status code class is a quirk of the health check specification, as it does not prohibit returning content, but may be interpreted to conflict with the http response status codes specification <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_headers_2"><a class="anchor" href="#_response_headers_2"></a><span class="black">response headers</span> <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></h3>
+<div class="paragraph">
+<p>the http response must contain an ipipeline-health-status header, providing the same value as is reported by the mandatory root "status" field in the json response.</p>
+</div>
+<div class="paragraph">
+<p>example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+ipipeline-health-status: pass
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_response_format"><a class="anchor" href="#_response_format"></a>response format</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>in addition to the specification in the api-healthcheck internet draft, the following apply:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>in addition to the mandatory root field ["status"] declared in the internet draft, the following fields [as described in the upstream specification] are mandatory for all ipipeline implementations:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>serviceid</p>
+</li>
+<li>
+<p>description</p>
+</li>
+<li>
+<p>version</p>
+</li>
+<li>
+<p>releaseid</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>serviceid must be a version 4 uuid which conforms to the specification described in rfc 4122 <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>, and must be registered in the component uuid registry <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
+</li>
+<li>
+<p>where an implementation includes a checks object, the following fields [as described in the upstream specification] are mandatory for each subcomponent:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>componentname</p>
+</li>
+<li>
+<p>measurementname</p>
+</li>
+<li>
+<p>status</p>
+</li>
+<li>
+<p>componentid</p>
+</li>
+<li>
+<p>componenttype</p>
+</li>
+<li>
+<p>observedvalue</p>
+</li>
+<li>
+<p>observedunit</p>
+</li>
+<li>
+<p>time</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_monitor_object"><a class="anchor" href="#_monitor_object"></a><span class="black">monitor object</span></h3>
+<div class="paragraph">
+<p>the monitor object contains an array which declares the intervals and frequencies with which the given health state should be queried.  each implementation&#8217;s response format should include a monitor object, with the following mandatory content:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+interval [object]
+</td>
+<td class="hdlist2">
+<p>the interval object must have the following keys:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>normal: the number of seconds between checks during normal conditions<br></p>
+</li>
+<li>
+<p>failure : the number of seconds between checks during failure conditions<br></p>
+</li>
+<li>
+<p>recovery : the number of seconds between checks during recovery conditions</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+failuresbeforeaction [unsigned integer]
+</td>
+<td class="hdlist2">
+<p>in a failure state, the number of failures that should be occur before an action is taken</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+successesbeforeaction [unsigned integer]
+</td>
+<td class="hdlist2">
+<p>in a recovery state, the number of successes that should be occur before an action is taken</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>if a given implementation does not publish a monitoring object, the following default values are assumed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>interval</p>
+<div class="ulist">
+<ul>
+<li>
+<p>normal condition - 30</p>
+</li>
+<li>
+<p>failure condition - 15</p>
+</li>
+<li>
+<p>recovery condition - 30</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>failures before action - 2</p>
+</li>
+<li>
+<p>successes before action - 11</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_security"><a class="anchor" href="#_security"></a><span class="black">security</span></h3>
+<div class="paragraph">
+<p>inherently, health check resources often contain confidential information, and as such, must implement appropriate security controls as per ipipeline policies</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples_2"><a class="anchor" href="#_examples_2"></a><span class="black">examples</span></h3>
+<div class="paragraph">
+<p>examples can be found in the /examples/ directory</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml" class="bare">https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Response_fields" class="bare">https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Response_fields</a>
+</div>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://datatracker.ietf.org/doc/draft-inadarei-api-health-check/" class="bare">https://datatracker.ietf.org/doc/draft-inadarei-api-health-check/</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://github.com/inadarei/rfc-healthcheck" class="bare">https://github.com/inadarei/rfc-healthcheck</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://datatracker.ietf.org/doc/html/rfc3986#section-3.3" class="bare">https://datatracker.ietf.org/doc/html/rfc3986#section-3.3</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-6.6" class="bare">https://datatracker.ietf.org/doc/html/rfc7231#section-6.6</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="https://datatracker.ietf.org/doc/html/rfc4122" class="bare">https://datatracker.ietf.org/doc/html/rfc4122</a>
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. <a href="http://placeholder.ipipeline.com/component_uuid_registry/" class="bare">http://placeholder.ipipeline.com/component_uuid_registry/</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>

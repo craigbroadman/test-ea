@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AWS Account Setup (Requirements) :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../security/internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>AWS Account Setup</li>
+    <li><a href="aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/aws_account_setup/pages/aws_account_setup.requirements.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">AWS Account Setup (Requirements)</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_sprint_zero_requirements_to_establish_as_part_of_design"><span class="underline">Sprint zero requirements to establish as part of design</span></a>
+<ul class="sectlevel2">
+<li><a href="#_general_notes"><span class="underline">General notes</span></a></li>
+<li><a href="#_requirements"><span class="underline">Requirements</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_sprint_zero_requirements_to_establish_as_part_of_design"><a class="anchor" href="#_sprint_zero_requirements_to_establish_as_part_of_design"></a><span class="underline">Sprint zero requirements to establish as part of design</span></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All of the following items have been agreed to be decided during the architecture design meeting for the account.  All are required in order for a sprint zero to proceed and be accepted by the project delivery team. Not including any of the below in the abstract.adoc and/or abstract.xml in this same directory will cause the request to enter immediate blocked status and require additional meeting(s) to be scheduled with architects and the product team to establish the missing information.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_general_notes"><a class="anchor" href="#_general_notes"></a><span class="underline">General notes</span></h3>
+<div class="paragraph">
+<p>The architectural design meeting to ascertain the following requirements should have membership from the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Product team requesting the account</p>
+</li>
+<li>
+<p>Architecture team</p>
+</li>
+<li>
+<p>Product delivery team - ideally the person to be assigned the sprint zero. This person is there to ensure all of the below is brought up as part of the meeting(s) before a sprint zero is handed off to the product delivery team.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_requirements"><a class="anchor" href="#_requirements"></a><span class="underline">Requirements</span></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Account name</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>See architecture documentation for nomenclature, convention has changed. (standards/nomenclature/aws/accounts.adoc)</p>
+</li>
+<li>
+<p>Please supply, even if standard, as delays to check on naming conventions occur if not provided, as all below.</p>
+</li>
+<li>
+<p>As of 2022.01 - all first level accounts to now be named -dev, not -sbx or -sandbox.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Account alias</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>See architecture documentation for nomenclature. No longer same as account name. (standards/nomenclature/aws/accounts.adoc)</p>
+</li>
+<li>
+<p>To decide during architecture meeting with product/architecture/project delivery teams.</p>
+</li>
+<li>
+<p>Please supply, even if standard.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Account email alias</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>See architecture documentation for nomenclature. (standards/nomenclature/aws/accouts.adoc)</p>
+</li>
+<li>
+<p>To decide during architecture meeting with product/architecture/project delivery teams.</p>
+</li>
+<li>
+<p>Please supply, even if standard.</p>
+</li>
+<li>
+<p>FYI - most engineers don&#8217;t have O365 Exchange admin access to self-service this change and must request this change out.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>GitHub repo name</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Typically 'product-terraform'</p>
+</li>
+<li>
+<p>Please supply, even if standard.</p>
+</li>
+<li>
+<p>Adding to an existing repo or starting a new repo?</p>
+</li>
+<li>
+<p>FYI - engineers also can&#8217;t self service this and must submit a request to ~git-admins</p>
+</li>
+<li>
+<p>Check if the repo exists already and has live Terraform already present. This will require more work to understand the current state, and what needs to be done to utilize the repo for new accounts.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Control Tower OU</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>In addition to noting the OU to use, please indicate if the OU already exists and just enrolling the account(s) into it, or is this also a new OU itself, which needs to be created and have guardrails applied to it. Creating a new OU to use is a more involved and time consuming process.</p>
+</li>
+<li>
+<p>RFC until standard change - any accounts, not just prod.</p>
+</li>
+<li>
+<p>Process to work through with Chris Deegan and/or Jacob Sloan for implementing.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Country for account - typically USA, GBR, or CAN.</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Please supply. Helps for answering 'regions' item standard starting point below, if not provided. Will be used for CountryCode tagging throughout account(s).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Region(s)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Typically 1 region, 'us-east-1' for USA, 'eu-west-2' for GBR, 'ca-central-1' for CAN.</p>
+</li>
+<li>
+<p>How many? If also creating DR region, need to supply that region as well. Provide all regions used and their order; i.e., primary/secondary.</p>
+</li>
+<li>
+<p>Please supply, even if standard, as we have multi-region accounts, EU accounts, etc.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>VPCs</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Starting point is 0 VPCs, unless decided they are needed during architecture design meetings.</p>
+</li>
+<li>
+<p>How many? To be supplied on the architecture diagram.</p>
+</li>
+<li>
+<p>May be multiple, or none if serverless account.</p>
+</li>
+<li>
+<p>If VPCs = 0, items #8 - 10 are not needed.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Subnets/AZs</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Standard is 6 subnets, across 2 subnets. 2 public a/b, 2 private a/b, 2 data a/b.</p>
+</li>
+<li>
+<p>If VPCs = 0, then number of subnets provisioned will also = 0</p>
+</li>
+<li>
+<p>AZs will be in alpha order for number of subnets unless otherwise provided. 2 subnets will be a and b, 3 subnets a, b, and c.</p>
+</li>
+<li>
+<p>Call out specific AZ requirements, if known. Some AWS resources are only supported in certain AZs.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Some RDS types</p>
+</li>
+<li>
+<p>Workspaces</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>IP address ranges</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Standard was previously /24 per subnet, recently becoming a 'how many do you need request' each time.</p>
+</li>
+<li>
+<p>Per subnet above the amount of IP addresses required.</p>
+</li>
+<li>
+<p>Starting point to use, but still confirm during architectural design session:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>VPCs - 10.x.x.x/26</p>
+</li>
+<li>
+<p>Subnets 10.x.x.x/28</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>CIDRs</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Based on the VPC/subnet/ranges items above, what are the calculated CIDRs to use in provisioning for all resources requested?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>VPC = 10.1.1.1/26 etc. Full detail version of previous item.</p>
+</li>
+<li>
+<p>Subnet public a = 10.x.x.x/x</p>
+</li>
+<li>
+<p>Subnet private a = 10.x.x.x/x</p>
+</li>
+<li>
+<p>Etc.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Create dev_role group?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Typically done for starting a new product family in AWS and whatever account is created first, usually a new dev account.</p>
+</li>
+<li>
+<p>If yes, who needs to be members of the group? Question for product team to provide as part of request.</p>
+</li>
+<li>
+<p>Product team will need to provide dev_role group members as part of request, if the type of account requires an initial dev_role group to be created.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>'Make it like this other account' type requests</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Not enough detail to work with.</p>
+</li>
+<li>
+<p>This will need lots of items cleared up. We typically use the same repo for dev/qa/uat/prod accounts, but not always. But are we adding to an existing repo?</p>
+</li>
+<li>
+<p>Differences between accounts? For example, a UK version of US account or vice versa. Still the same amount of VPCs, naming, what regions, etc.</p>
+</li>
+<li>
+<p>Safest and most clear and direct way is to answer all previous questions regardless of whether an account is being duplicated or not.</p>
+</li>
+<li>
+<p>If this is requested, all items on in this document should be confirmed during the architecture meeting, which will still be required for <strong>any</strong> new account request to ensure correct details are gathered.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Aviatrix required?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>If any VPCs are provisioned, this is required. Otherwise, this is not needed.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Transit Gateway required?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Same as Aviatrix. If VPCs are provisioned, Transit Gateway will be required.</p>
+</li>
+<li>
+<p>Do not deploy this change without an RFC. Must be done during change windows for all environments.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>TGW/Aviatrix setup custom rules required?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Only provide cloudsink.net for CrowdStrike, show below, as a starting point. Ask up front if anything else outgoing is needed during the architecture design meetings.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>How to install packages, pull updates, etc.? Would require pre-baked images for all cases / internal resources to pull all requirements, updates, managed regularly with new updates, etc.</p>
+</li>
+<li>
+<p>What teams responsible for managing/troubleshooting/identifying what&#8217;s needed to be whitelisted?</p>
+</li>
+<li>
+<p>Pull requests required for team to submit changes to whitelist.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Direct Connect required?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Currently will need to work heavily with network team to accomplish this, and much of the work is manual and not yet incorporated into Terraform processes.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Internal Data Center DNS resolvers needed?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>If direct connect = yes, yes/no for needing DNS resolvers for internal data center resources. N/A if no vpc &amp; direct connect.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Transit Subnets required and their CIDRs?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Always a /28 per subnet. Range to request with the rest of the subnets.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Create deploy account yes/no?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Shared management account no longer permitted for CodePipeline. Must have a dedicated deployment account for the specific product family of accounts.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Financial approval cleared?</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Confirm during design/architectural that meeting financial approval has happened. No accounts should be created without the budget being cleared.</p>
+</li>
+<li>
+<p>R&amp;D Owner/Product Owner should be informing Mike Prendergast of the budget and have the cost calculator be completed.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>

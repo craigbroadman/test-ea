@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ENTARCH-6 - Technical Design - Migrate internal access to Ipipeline applications to OKTA :: Enterprise Architecture Wiki</title>
+    <meta name="generator" content="Antora 3.1.2">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Enterprise Architecture Wiki</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="EnterpriseArchitectureWiki" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Enterprise Architecture Wiki</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Overview</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_decision_records.guidelines.html">Architecture decision Records (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Architecture Reviews</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.adr.html">Architecture Review Process (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture_reviews/architecture_review_process.standard.html">Architecture Review (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Account Setup</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_account_setup/aws_account_setup.requirements.html">AWS Account Setup (Requirements)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AWS Network Firewall</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../aws_network_firewall/aws_network_firewall.guidelines.html">AWS Network Firewall (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">CICD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.adr.html">AWS CodePipeline (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../cicd/aws_codepipeline.guidelines.html">AWS CodePipeline (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../database/aws_backup_ransomware.html">AWS Backup Reference (Documentation)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/architecture_design_documentation.specification.html">Architecture Design Documentation (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.adr.html">AsciiDoc (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/asciidoc.guidelines.html">AsciiDoc (Guidelines)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.adr.html">Date and Time Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/date_and_time_format.standard.html">Date and Time Format (Standards)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/file_format.adr.html">File Format (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.adr.html">aming Files and Folders (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation/naming_files_and_folders.guidelines.html">Naming Files and Folders (Guidelines)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Environment</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../environment/ups.standard.html">UPS (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Health Check</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.adr.html">Health Check (ADR)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../health_check/health_check.specification.html">Health Check (Specification)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Network</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network/network_device_configuration.html">Network Device Configuration (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nomenclature</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_accounts.specification.html">AWS Account Nomenclature (Specification)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../nomenclature/aws_s3.standard.html">AWS S3 Object Nomenclature (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Numbers Authority</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../numbers_authority/autonomous_systems_numbers.standard.html">Autonomous System Number Assignment (Standards)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="internal_apps_access_okta.adr.html">Internal Apps - Access - Okta (ADR)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Enterprise Architecture Wiki</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Enterprise Architecture Wiki</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Enterprise Architecture Wiki</a></li>
+    <li>Security</li>
+    <li><a href="internal_apps_access_okta.standards.html">Internal Apps - Access - Okta (Standards)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///C:/Source/GitHub/enterprise-architecture/modules/security/pages/internal_apps_access_okta.standards.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">ENTARCH-6 - Technical Design - Migrate internal access to Ipipeline applications to OKTA</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_key_contacts">Key Contacts</a></li>
+<li><a href="#_key_terms">Key Terms</a></li>
+<li><a href="#_description">Description</a></li>
+<li><a href="#_how_staff_authenticates_today">How staff Authenticates Today</a>
+<ul class="sectlevel2">
+<li><a href="#_users_logging_into_the_same_application_as_end_users">Users logging into the same application as end users</a></li>
+<li><a href="#_users_logging_into_a_separate_admin_panel">Users logging into a separate admin panel</a></li>
+<li><a href="#_users_accessing_application_infrastructure">Users Accessing Application Infrastructure</a></li>
+</ul>
+</li>
+<li><a href="#_document_scope">Document Scope</a></li>
+<li><a href="#_recognized_roles_for_ipipeline_users">Recognized Roles for Ipipeline Users</a>
+<ul class="sectlevel2">
+<li><a href="#_support_teams_designated_okta_administrator">Support Team&#8217;s Designated OKTA Administrator</a></li>
+<li><a href="#_support_role">Support Role</a></li>
+<li><a href="#_developer_role">Developer Role</a></li>
+</ul>
+</li>
+<li><a href="#_system_requirements">System Requirements</a>
+<ul class="sectlevel2">
+<li><a href="#_ipipeline_application">Ipipeline Application</a></li>
+<li><a href="#_okta">OKTA</a></li>
+</ul>
+</li>
+<li><a href="#_recommended_workflow">Recommended Workflow</a></li>
+<li><a href="#open_requirements">Open Requirements</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_key_contacts"><a class="anchor" href="#_key_contacts"></a>Key Contacts</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Wayne Ennis</p>
+</li>
+<li>
+<p>Jay Simoni</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_terms"><a class="anchor" href="#_key_terms"></a>Key Terms</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>IDP</strong> - Identity Provider - System that manages authentication</p>
+</li>
+<li>
+<p><strong>Ipipeline Application</strong> - Any application internal or external supported by Ipipeline Organization</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a>Description</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ipipeline needs a common set of practices for authenticating support/technical staff into Ipipeline Applications.  We&#8217;d like to eliminate the use of shared user credentials, and promote the practice of using a common user store for our internal staff.</p>
+</div>
+<div class="paragraph">
+<p><strong>Eliminate</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The use of shared credentials</p>
+</li>
+<li>
+<p>Multiple credentials for a single staff member</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Promote</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The practice of using a centralized user store for our internal staff which facilitates</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Implementing current (and future) authentication requirements (i.e. password strength, complexity, MFA, etc)</p>
+</li>
+<li>
+<p>Modifying/Revoking privileges as staff members leave or change roles</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_staff_authenticates_today"><a class="anchor" href="#_how_staff_authenticates_today"></a>How staff Authenticates Today</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_users_logging_into_the_same_application_as_end_users"><a class="anchor" href="#_users_logging_into_the_same_application_as_end_users"></a>Users logging into the same application as end users</h3>
+<div class="paragraph">
+<p>We have instances where staff authenticates into the application itself with elevated privileges that unlocks admin features.  These admin features are usually hidden to the customer.  The privileged users may be stored in an internal Database, or a centralized user store (Ping).  Individual staff members  may have their own set of credentials, or there may be a set of credentials shared between internal staff.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_users_logging_into_a_separate_admin_panel"><a class="anchor" href="#_users_logging_into_a_separate_admin_panel"></a>Users logging into a separate admin panel</h3>
+<div class="paragraph">
+<p>Instead of logging into the same application as the end user.  We have cases where internal staff logs into a separate admin panel to support customer facing applications.  This admin panel contains all the features necessary to support, and configure the applications our customers interact with. The privileged users may be stored in an internal Database, or a centralized user store (Ping).  Individual staff members  may have their own set of credentials, or there may be a set of credentials shared between internal staff.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_users_accessing_application_infrastructure"><a class="anchor" href="#_users_accessing_application_infrastructure"></a>Users Accessing Application Infrastructure</h3>
+<div class="paragraph">
+<p>Internal staff may need access to the underlying infrastructure for support purposes.  This could mean running queries on a database,  or accessing logs on a server.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_document_scope"><a class="anchor" href="#_document_scope"></a>Document Scope</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of this document is to provide guidelines on how staff members should authenticate into an Ipipeline Application for support purposes.  It does not cover authentication mechanisms for application infrastructure nor does it cover how an Ipipeline Application should be supported.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recognized_roles_for_ipipeline_users"><a class="anchor" href="#_recognized_roles_for_ipipeline_users"></a>Recognized Roles for Ipipeline Users</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_support_teams_designated_okta_administrator"><a class="anchor" href="#_support_teams_designated_okta_administrator"></a>Support Team&#8217;s Designated OKTA Administrator</h3>
+<div class="paragraph">
+<p><strong>Ancillary role not recognized within the Ipipeline Application</strong>
+It is not recommended that all support users have access to OKTA&#8217;s administrative features.  There should be a designated administrator from the support team to facilitate the access to applications and records.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_support_role"><a class="anchor" href="#_support_role"></a>Support Role</h3>
+<div class="paragraph">
+<p>Members of the support team or staff members expected to support application in an environment. Users in this role should have the most elevated privileges. In production the support role should be assumed by  members of the support team.  Staff members outside of the support team may assume this role in lower environments.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Example - A Developer may need access to the features of support role in QA to troubleshoot and test functionality</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_developer_role"><a class="anchor" href="#_developer_role"></a>Developer Role</h3>
+<div class="paragraph">
+<p>Ipipeline employee not on the support team, but requires certain access to support an Ipipeline application.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_system_requirements"><a class="anchor" href="#_system_requirements"></a>System Requirements</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ipipeline_application"><a class="anchor" href="#_ipipeline_application"></a>Ipipeline Application</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ability to accept Ipipeline internal roles passed in from OKTA via SAML or SCIM</p>
+</li>
+<li>
+<p>Provides appropriate access based on the roles passed</p>
+</li>
+<li>
+<p>Ability for Support roles to add access controls to specific records</p>
+</li>
+<li>
+<p>Allow Developer roles to access records based on access controls</p>
+</li>
+<li>
+<p>Require users in the support role to revoke access based on time constraint</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_okta"><a class="anchor" href="#_okta"></a>OKTA</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User Store for Ipipeline Staff</p>
+</li>
+<li>
+<p>Group Users based on Role</p>
+</li>
+<li>
+<p>Ability to Authenticate user and Redirect to appropriate application via SAML</p>
+</li>
+<li>
+<p>Ability to pass Ipipeline internal roles to Ipipeline application via SAML or SCIM</p>
+</li>
+<li>
+<p>Allow delegated group member administrators (possibly users in support role) to grant access to Ipipeline applications, and specific records</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recommended_workflow"><a class="anchor" href="#_recommended_workflow"></a>Recommended Workflow</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Support team receives ticket</p>
+</li>
+<li>
+<p>support team member goes to application to troubleshoot case</p>
+</li>
+<li>
+<p>support team member identifies record in question and begins troubleshooting</p>
+</li>
+<li>
+<p>Support team member does not find root cause of issues, and needs more support</p>
+</li>
+<li>
+<p>support team member contacts their designated OKTA group Administrator</p>
+</li>
+<li>
+<p>Support team&#8217;s designated OKTA Administrator notes the Case number and the developer needed to further troubleshoot</p>
+</li>
+<li>
+<p>Support team&#8217;s designated OKTA Administrator gives developer access to the application and assigns the developer the case</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Adds Custom header (ipipeline-case-access) to the developer&#8217;s user account in OKTA with the value being the case number</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Developer uses OKTA to sign into the Application</p>
+</li>
+<li>
+<p>Ipipeline Application Accepts authentication request looking for custom Access header (ipipeline-case-access)</p>
+</li>
+<li>
+<p>Ipipeline Application reads value of custom access header (ipipeline-case-access), and authorizes the developer to view the record</p>
+</li>
+<li>
+<p>Developer finishes troubleshooting case</p>
+</li>
+<li>
+<p>Support team&#8217;s designated OKTA Administrator revokes developer&#8217;s permissions to the application and the case, by removing custom access header</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Please note that the ultimate goal is to have automatic revocation of access. please see <a href="#open_requirements">Open Requirements</a> for further details</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/okta_sso_support_flow.jpeg" alt="okta sso support flow">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="open_requirements"><a class="anchor" href="#open_requirements"></a>Open Requirements</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Automatic Revocation of Access</strong> - We are currently looking into mechanisms that would help automatically revoke access to applications/records based on time constraints.  We are currently looking at Modules within OKTA, and Hashicorp Boundary</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>
